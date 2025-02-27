@@ -5,7 +5,7 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 3000; // Railway asigna un puerto dinámico
+const port = process.env.PORT; // Railway asigna un puerto dinámico
 
 app.use(cors());
 app.use(express.json()); 
