@@ -45,6 +45,6 @@ app.post("dbcloudcrud-github-io.railway.internal/accounts", async (req, res) => 
 });
 
 // Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en el puerto ${port}`);
 });
