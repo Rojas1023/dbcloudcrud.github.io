@@ -1,6 +1,6 @@
 async function fetchAccounts() {
     try {
-        const response = await fetch("http://localhost:3000/accounts");
+        const response = await fetch("https://dbcloudcrud-production.up.railway.app/accounts");
         const data = await response.json();
 
         const tableBody = document.getElementById("accounts-table");
@@ -30,7 +30,7 @@ function createAccount() {
     const telefono = prompt("Ingrese el teléfono:");
 
     if (nombre && balance && telefono) {
-        fetch("http://localhost:3000/accounts", {
+        fetch("https://dbcloudcrud-production.up.railway.app/accounts", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
