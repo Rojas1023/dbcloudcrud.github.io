@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static("public")); // Sirve archivos estáticos (frontend)
 
 // HTML principal
-app.get("dbcloudcrud-github-io.railway.internal/", (req, res) => {
+app.get("https://dbcloudcrud-production.up.railway.app/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
@@ -23,7 +23,7 @@ const pool = new Pool({
 });
 
 // Rutas del backend
-app.get("dbcloudcrud-github-io.railway.internal/accounts", async (req, res) => {
+app.get("https://dbcloudcrud-production.up.railway.app/accounts", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM accounts;");
     res.json(result.rows);
@@ -33,7 +33,7 @@ app.get("dbcloudcrud-github-io.railway.internal/accounts", async (req, res) => {
   }
 });
 
-app.post("dbcloudcrud-github-io.railway.internal/accounts", async (req, res) => {
+app.post("https://dbcloudcrud-production.up.railway.app/accounts", async (req, res) => {
     const { nombre, balance, telefono } = req.body;
     try {
         await pool.query("INSERT INTO accounts (nombre, balance, telefono) VALUES ($1, $2, $3);", [nombre, balance, telefono]);
